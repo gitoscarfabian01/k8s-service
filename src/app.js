@@ -5,7 +5,7 @@ const SERVICE_VERSION = process.env.SERVICE_VERSION || '1.0.0';
 app.use(express.json());
 
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok', version: SERVICE_VERSION });
+  res.status(200).json({ status: 'ok status', version: SERVICE_VERSION });
 });
 
 app.get('/ready', (req, res) => {
@@ -14,7 +14,7 @@ app.get('/ready', (req, res) => {
 
 app.get('/api/items', (req, res) => {
   res.json([
-    { id: 1, name: 'Item A', description: 'First item' },
+    { id: 1, name: 'Item A', description: 'First item change' },
     { id: 2, name: 'Item B', description: 'Second item' },
     { id: 3, name: 'Item C', description: 'Third item' },
   ]);
